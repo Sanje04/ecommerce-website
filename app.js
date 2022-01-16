@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan');
 const bodyParser = require('body-parser')
-const cookieParser = require('cookie-Parser')
+const cookieParser = require('cookie-parser')
 require('dotenv').config();
 // import routes
 const userRoutes = require('./routes/user')
