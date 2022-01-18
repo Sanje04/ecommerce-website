@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user')
 const app = express()
 
 // db
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
 }).then(() => console.log('DB Connected'))
 
