@@ -1,7 +1,7 @@
 const User = require('../models/user')
 
 exports.signup = (req, res) => {
-    console.log("req.body", req.body);
+    //console.log("req.body", req.body);
     const user = new User(req.body);
 
     user.save((error, user) => {
@@ -9,7 +9,7 @@ exports.signup = (req, res) => {
             return res.status(400).json({
                 error
             })
-        }
+        }   
         res.json({
             user
         });
