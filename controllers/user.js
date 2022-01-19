@@ -38,7 +38,7 @@ exports.signin = (req, res) => {
             })
         }
         // generate a signed token with user id and secret
-        const token = jwt.sign({_id: user_id}, process.env.JWT_SECRET)
+        const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET)
         // persist the token as 't' in cookie with expiry date
         res.cookie('t', token, {expire: new Date() + 9999})
         // return response with user and token to frontend client
@@ -46,3 +46,9 @@ exports.signin = (req, res) => {
         return res.json({ token, user: {_id, name, email, role }})
     })
 };
+
+exports.signout = (req, res) => {
+    //clear the cookie when the user signsout, clears the cookie
+    res.clearCookie('t');
+    res.json({ message: "Signout success" })
+}
