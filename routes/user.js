@@ -17,6 +17,4 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
 //middle
 router.param('userId', userById)
 
-
-
 module.exports = router;

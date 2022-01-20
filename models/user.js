@@ -25,9 +25,9 @@ const userSchema = new mongoose.Schema(
             trim: true
         },
         salt: String,
-        role: {
-            type: Number,
-            default: 0
+        isAdmin: {
+            type: Boolean,
+            default: false
         },
         history: {
             type: Array,
